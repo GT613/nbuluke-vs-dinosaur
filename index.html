@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="theme-color" content="#090d2b" />
+  <title>布鲁可大战恐龙</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">B</span><div><b>布鲁可大战恐龙</b><small>星际守护战</small></div></div>
+      <button id="soundBtn" class="icon-btn" aria-label="音乐开关">♫ 音乐</button>
+    </header>
+
+    <main>
+      <section id="selectScreen" class="screen active">
+        <div class="hero-copy">
+          <span class="eyebrow">英雄集结 · 守护能量核心</span>
+          <h1>选择你的<br><em>布鲁可英雄</em></h1>
+          <p>连续闯过 4 个战场，击退越来越强的暴虐霸王龙！</p>
+          <div class="tips"><span>⚔ 普攻积攒能量</span><span>✦ 满能量释放大招</span></div>
+        </div>
+        <div class="choose-panel">
+          <h2>选择出战英雄</h2>
+          <div id="heroCards" class="hero-cards"></div>
+          <button id="startBtn" class="primary-btn" disabled>请选择一位英雄</button>
+        </div>
+      </section>
+
+      <section id="battleScreen" class="screen battle-screen">
+        <div id="arena" class="arena">
+          <div class="stage-head"><span id="stageText">第 1 关</span><b id="stageName">星际前哨</b><span id="stars">★ ★ ★ ★</span></div>
+          <div id="evolutionAlert" class="evolution-alert"><span>⚠</span><b>进化预警</b><small>霸王龙生命低于一半会进入暴虐形态</small></div>
+          <div class="hud hero-hud"><div class="avatar" id="heroAvatar"></div><div class="meters"><strong id="heroName"></strong><div class="bar hp"><i id="heroHp"></i><span id="heroHpText"></span></div><div class="bar energy"><i id="energyBar"></i><span>能量</span></div></div></div>
+          <div class="hud enemy-hud"><div class="meters"><strong id="enemyName">暴虐霸王龙</strong><div class="bar hp"><i id="enemyHp"></i><span id="enemyHpText"></span></div></div><div class="avatar enemy-avatar"></div></div>
+          <div class="fighters">
+            <div id="heroFighter" class="fighter hero-fighter"><img alt="玩家英雄"></div>
+            <div id="enemyFighter" class="fighter enemy-fighter"><img alt="暴虐霸王龙"></div>
+          </div>
+          <div id="fx" class="fx-layer"></div>
+          <div id="announcement" class="announcement"></div>
+        </div>
+        <div class="controls">
+          <button id="attackBtn" class="action attack"><span>⚔</span><b>能量连斩</b><small>突进攻击 · +20 能量</small></button>
+          <button id="guardBtn" class="action guard"><span>◈</span><b>守护充能</b><small>减伤回血 · +15 能量</small></button>
+          <button id="ultimateBtn" class="action ultimate" disabled><span>✦</span><b id="ultimateName">终极必杀</b><small id="ultHint">能量满时可用</small></button>
+        </div>
+      </section>
+
+      <section id="resultScreen" class="screen result-screen">
+        <div class="result-card"><div id="resultIcon" class="result-icon">🏆</div><span id="resultTag" class="eyebrow">任务完成</span><h2 id="resultTitle">守护成功！</h2><p id="resultText"></p><div id="resultStars" class="result-stars">★★★★</div><button id="nextBtn" class="primary-btn">前往下一关</button><button id="homeBtn" class="text-btn">重新选择英雄</button></div>
+      </section>
+    </main>
+    <footer>操作提示：点击技能按钮即可战斗 · 本游戏会自动保存最高通关记录</footer>
+  </div>
+  <audio id="bgm" loop preload="metadata" src="assets/Captain-Badass.mp3"></audio>
+  <script src="game.js"></script>
+</body>
+</html>
